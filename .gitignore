@@ -1,0 +1,16 @@
+# Ignorar archivos y directorios generados automáticamente
+/node_modules
+/dist
+/.vscode
+
+# Ignorar archivos específicos
+.env
+*.log
+
+# Ignorar archivos de respaldo
+*~
+*.swp
+
+# Ignorar archivos de configuración de sistema
+.DS_Store
+Thumbs.db
