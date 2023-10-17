@@ -168,4 +168,15 @@ main .menu .menu-grid div img:hover {
     grid-template-columns: repeat(5, 1fr);
     gap: 4rem;
   }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  main .menu .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr minmax(100px, 291.59px);
+    gap: 4rem;
+  }
+  main .menu .menu-grid .celda5 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
 }/*# sourceMappingURL=main.css.map */
