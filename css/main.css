@@ -1,9 +1,9 @@
 @charset "UTF-8";
-/* apply a natural box layout model to all elements, but allowing components to change */
+/* Variables */
+/* Establecer el modelo de caja para todos los elementos y tamaño de fuente base */
 html {
   box-sizing: border-box;
-  /* 1rem = 10px */
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
 *,
@@ -12,10 +12,12 @@ html {
   box-sizing: inherit;
 }
 
+/* Establecer la fuente predeterminada para todos los elementos */
 * {
   font-family: "Roboto", "sans-serif";
 }
 
+/* Ajustar el tamaño de fuente del cuerpo */
 body {
   font-size: 1.6rem;
 }
@@ -23,14 +25,23 @@ body {
 main {
   width: 80%;
   margin: 0 auto;
+  /* Estilos para la sección "hero" */
+  /* Estilos para la sección "dishes" */
+  /* Estilos para la sección "menu" */
 }
 main .hero {
   display: grid;
   grid-template-columns: 1fr;
-  margin-bottom: 4rem;
+  margin-bottom: 2.4rem;
+  /* Contenido informativo en "hero" */
+  /* Imagen en la sección "hero" */
 }
 main .hero .info {
   text-align: center;
+  /* Título principal */
+  /* Párrafo descriptivo */
+  /* Estilos del botón */
+  /* Estilos del botón al pasar el mouse sobre él */
 }
 main .hero .info h1 {
   color: #333;
@@ -66,16 +77,22 @@ main .hero .hero-image {
 }
 main .dishes {
   margin-bottom: 40px;
+  /* Título de la sección "dishes" */
+  /* Cuadrícula de platos en la sección "dishes" */
 }
 main .dishes h2 {
-  margin-top: 40px;
+  margin-top: 1rem;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
 }
 main .dishes .dishes-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  /* Video en la cuadrícula de platos */
+  /* Imágenes de platos en la cuadrícula */
+  /* Escala de la imagen al pasar el mouse sobre ella */
+  /* Escala de la imagen cuando está enfocada */
 }
 main .dishes .dishes-grid .video {
   grid-column-start: 1;
@@ -93,23 +110,30 @@ main .dishes .dishes-grid img:hover {
   transform: scale(1.01);
 }
 main .dishes .dishes-grid img:focus {
-  transform: scale(1.05); /* Aplicar la misma escala cuando la imagen está enfocada */
+  transform: scale(1.05);
   outline: none; /* Elimina el borde de enfoque predeterminado */
+}
+main .menu {
+  /* Título de la sección "menu" */
+  /* Cuadrícula de elementos en la sección "menu" */
 }
 main .menu h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
 }
 main .menu .menu-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
+  /* Elementos individuales en la cuadrícula de "menu" */
 }
 main .menu .menu-grid div {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   overflow: hidden;
   position: relative; /* Añadido para la superposición */
+  /* Imagen de elemento en "menu" */
+  /* Escala de la imagen al pasar el mouse sobre ella */
 }
 main .menu .menu-grid div img {
   width: 100%;
@@ -122,6 +146,7 @@ main .menu .menu-grid div img:hover {
   transform: scale(1.04);
 }
 
+/* Reglas de medios para pantallas de 1024px o más grandes */
 @media only screen and (min-width: 1024px) {
   main .hero {
     grid-template-columns: 2fr 3fr;

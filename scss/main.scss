@@ -1,8 +1,24 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
+/* Variables */
+$color-text: #333;
+$color-button-background: #f57c00;
+$color-button-background-hover: #ff9900;
+
+$font-family: "Roboto", "sans-serif";
+$font-size-base: 1.6rem;
+$font-size-hero-title: 4rem;
+$font-size-hero-paragraph: 2rem;
+
+$spacing-unit: 1rem;
+$spacing-margin-bottom: 2.4rem;
+
+$transition-duration: 0.3s;
+
+$container-width: 80%;
+
+/* Establecer el modelo de caja para todos los elementos y tamaño de fuente base */
 html {
   box-sizing: border-box;
-  /* 1rem = 10px */
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px */
 }
 *,
 *:before,
@@ -10,108 +26,148 @@ html {
   box-sizing: inherit;
 }
 
+/* Establecer la fuente predeterminada para todos los elementos */
 * {
-  font-family: "Roboto", "sans-serif";
+  font-family: $font-family;
 }
+
+/* Ajustar el tamaño de fuente del cuerpo */
 body {
-  font-size: 1.6rem;
+  font-size: $font-size-base;
 }
 
 main {
-  width: 80%;
+  width: $container-width;
   margin: 0 auto;
+
+  /* Estilos para la sección "hero" */
   .hero {
     display: grid;
     grid-template-columns: 1fr;
-    margin-bottom: 4rem;
+    margin-bottom: $spacing-margin-bottom;
+
+    /* Contenido informativo en "hero" */
     .info {
       text-align: center;
+
+      /* Título principal */
       h1 {
-        color: #333;
-        font-size: 4rem;
+        color: $color-text;
+        font-size: $font-size-hero-title;
         font-weight: bolder;
-        margin-bottom: 2.4rem;
+        margin-bottom: $spacing-margin-bottom;
       }
+
+      /* Párrafo descriptivo */
       p {
-        color: #333;
-        font-size: 2rem;
-        margin-bottom: 2.4rem;
+        color: $color-text;
+        font-size: $font-size-hero-paragraph;
+        margin-bottom: $spacing-margin-bottom;
       }
+
+      /* Estilos del botón */
       button {
         border: none;
         border-radius: 2rem;
         color: #fff; /* Cambiar el color de texto a blanco para mayor contraste */
-        background-color: #f57c00; /* Usar un tono ligeramente más oscuro para el fondo */
+        background-color: $color-button-background; /* Usar un tono ligeramente más oscuro para el fondo */
         font-weight: bold; /* Cambiar "bolder" a "bold" */
         padding: 1.5rem 2.5rem; /* Aumentar ligeramente el relleno para un aspecto más agradable */
         margin-bottom: 2rem;
         cursor: pointer; /* Agregar un puntero cuando se pasa el mouse sobre el botón */
-        transition: background-color 0.3s, color 0.3s; /* Agregar una transición suave de color */
+        transition: background-color $transition-duration, color $transition-duration; /* Agregar una transición suave de color */
       }
+
+      /* Estilos del botón al pasar el mouse sobre él */
       button:hover {
-        background-color: #ff9900; /* Cambiar el color de fondo al pasar el mouse sobre el botón */
-        color: #333; /* Restaurar el color de texto original al pasar el mouse */
+        background-color: $color-button-background-hover; /* Cambiar el color de fondo al pasar el mouse sobre el botón */
+        color: $color-text; /* Restaurar el color de texto original al pasar el mouse */
       }
     }
+
+    /* Imagen en la sección "hero" */
     .hero-image {
       height: 100%;
       width: 100%;
       object-fit: contain;
     }
   }
+
+  /* Estilos para la sección "dishes" */
   .dishes {
     margin-bottom: 40px;
+
+    /* Título de la sección "dishes" */
     h2 {
-      margin-top: 40px;
+      margin-top: $spacing-unit;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: $spacing-unit;
     }
+
+    /* Cuadrícula de platos en la sección "dishes" */
     .dishes-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      gap: $spacing-unit;
+
+      /* Video en la cuadrícula de platos */
       .video {
         grid-column-start: 1;
         grid-column-end: 3;
       }
+
+      /* Imágenes de platos en la cuadrícula */
       img {
         height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 5px;
-        transition: transform 0.3s ease-in-out;
+        transition: transform $transition-duration ease-in-out;
       }
+
+      /* Escala de la imagen al pasar el mouse sobre ella */
       img:hover {
         transform: scale(1.01);
       }
+
+      /* Escala de la imagen cuando está enfocada */
       img:focus {
-        transform: scale(
-          1.05
-        ); /* Aplicar la misma escala cuando la imagen está enfocada */
+        transform: scale(1.05);
         outline: none; /* Elimina el borde de enfoque predeterminado */
       }
     }
   }
+
+  /* Estilos para la sección "menu" */
   .menu {
+    /* Título de la sección "menu" */
     h2 {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: $spacing-unit;
     }
+
+    /* Cuadrícula de elementos en la sección "menu" */
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 4rem;
+
+      /* Elementos individuales en la cuadrícula de "menu" */
       div {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         border-radius: 10px;
         overflow: hidden;
         position: relative; /* Añadido para la superposición */
+
+        /* Imagen de elemento en "menu" */
         img {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          transition: transform 0.3s; /* Agregada la animación de escala */
+          transition: transform $transition-duration; /* Agregada la animación de escala */
         }
+
+        /* Escala de la imagen al pasar el mouse sobre ella */
         img:hover {
           transform: scale(1.04);
         }
@@ -120,6 +176,7 @@ main {
   }
 }
 
+/* Reglas de medios para pantallas de 1024px o más grandes */
 @media only screen and (min-width: 1024px) {
   main {
     .hero {
@@ -142,7 +199,7 @@ main {
     }
     .menu {
       .menu-grid {
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 4rem;
       }
     }
