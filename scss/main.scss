@@ -23,13 +23,70 @@ main {
   .hero {
     display: grid;
     grid-template-columns: 1fr;
+    margin-bottom: 4rem;
     .info {
       text-align: center;
+      h1 {
+        color: #333;
+        font-size: 4rem;
+        font-weight: bolder;
+        margin-bottom: 2.4rem;
+      }
+      p {
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 2.4rem;
+      }
+      button {
+        border: none;
+        border-radius: 2rem;
+        color: #fff; /* Cambiar el color de texto a blanco para mayor contraste */
+        background-color: #f57c00; /* Usar un tono ligeramente más oscuro para el fondo */
+        font-weight: bold; /* Cambiar "bolder" a "bold" */
+        padding: 1.5rem 2.5rem; /* Aumentar ligeramente el relleno para un aspecto más agradable */
+        margin-bottom: 2rem;
+        cursor: pointer; /* Agregar un puntero cuando se pasa el mouse sobre el botón */
+        transition: background-color 0.3s, color 0.3s; /* Agregar una transición suave de color */
+      }
+      button:hover {
+        background-color: #ff9900; /* Cambiar el color de fondo al pasar el mouse sobre el botón */
+        color: #333; /* Restaurar el color de texto original al pasar el mouse */
+      }
     }
     .hero-image {
       height: 100%;
       width: 100%;
       object-fit: contain;
+    }
+  }
+  .dishes {
+    h2 {
+      text-align: center;
+    }
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      .video {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+      }
+      img:hover {
+        transform: scale(1.01);
+      }
+      img:focus {
+        transform: scale(
+          1.05
+        ); /* Aplicar la misma escala cuando la imagen está enfocada */
+        outline: none; /* Elimina el borde de enfoque predeterminado */
+      }
     }
   }
 }
@@ -40,26 +97,19 @@ main {
       grid-template-columns: 2fr 3fr;
       grid-auto-rows: 40rem;
       .info {
-        text-align:start;
+        text-align: start;
         align-self: center;
+      }
+    }
+    .dishes {
+      .dishes-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        .video {
+          grid-row-start: 1;
+          grid-row-end: 3;
+        }
       }
     }
   }
 }
-// main {
-//   max-width: 120rem;
-//   margin: 0 auto;
-//   .hero {
-//     display: grid;
-//     grid-template-columns: 2fr 3fr;
-//     grid-auto-rows: 40rem;
-//     .hero-image {
-//       height: 100%;
-//       width: 100%;
-//       object-fit: contain;
-//     }
-//     .info {
-//       align-self: center;
-//     }
-//   }
-// }

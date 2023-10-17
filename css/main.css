@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
@@ -26,15 +27,69 @@ main {
 main .hero {
   display: grid;
   grid-template-columns: 1fr;
+  margin-bottom: 4rem;
 }
 main .hero .info {
   text-align: center;
+}
+main .hero .info h1 {
+  color: #333;
+  font-size: 4rem;
+  font-weight: bolder;
+  margin-bottom: 2.4rem;
+}
+main .hero .info p {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 2.4rem;
+}
+main .hero .info button {
+  border: none;
+  border-radius: 2rem;
+  color: #fff; /* Cambiar el color de texto a blanco para mayor contraste */
+  background-color: #f57c00; /* Usar un tono ligeramente más oscuro para el fondo */
+  font-weight: bold; /* Cambiar "bolder" a "bold" */
+  padding: 1.5rem 2.5rem; /* Aumentar ligeramente el relleno para un aspecto más agradable */
+  margin-bottom: 2rem;
+  cursor: pointer; /* Agregar un puntero cuando se pasa el mouse sobre el botón */
+  transition: background-color 0.3s, color 0.3s; /* Agregar una transición suave de color */
+}
+main .hero .info button:hover {
+  background-color: #ff9900; /* Cambiar el color de fondo al pasar el mouse sobre el botón */
+  color: #333; /* Restaurar el color de texto original al pasar el mouse */
 }
 main .hero .hero-image {
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+main .dishes h2 {
+  text-align: center;
+}
+main .dishes .dishes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+main .dishes .dishes-grid .video {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+main .dishes .dishes-grid img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+main .dishes .dishes-grid img:hover {
+  transform: scale(1.01);
+}
+main .dishes .dishes-grid img:focus {
+  transform: scale(1.05); /* Aplicar la misma escala cuando la imagen está enfocada */
+  outline: none; /* Elimina el borde de enfoque predeterminado */
 }
 
 @media only screen and (min-width: 1024px) {
@@ -45,5 +100,13 @@ main .hero .hero-image {
   main .hero .info {
     text-align: start;
     align-self: center;
+  }
+  main .dishes .dishes-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  main .dishes .dishes-grid .video {
+    grid-row-start: 1;
+    grid-row-end: 3;
   }
 }/*# sourceMappingURL=main.css.map */
